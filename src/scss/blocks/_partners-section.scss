@@ -1,0 +1,35 @@
+@use "./layout/variables" as vars;
+
+.partners-section {
+  .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    @media (min-width: vars.$pc) {
+      margin-bottom: 42px;
+    }
+  }
+}
+
+.partners-slider {
+  position: relative;
+  width: 100vw;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  .swiper-wrapper{
+    transition-timing-function: linear !important;
+    display: flex;
+  }
+  .partner {
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    width: fit-content;
+    @media (min-width: vars.$tablet) {
+      font-size: 30px;
+    }
+    @media (min-width: vars.$pc) {
+      font-size: 48px;
+    }
+  }
+}

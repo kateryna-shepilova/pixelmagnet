@@ -1,0 +1,145 @@
+@use "./layout/variables" as vars;
+
+.footer-holder {
+  background: vars.$dark;
+  color: vars.$white;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 40px 0;
+  @media (min-width: vars.$laptop) {
+    padding: 72px 0 55px;
+  }
+  a {
+    transition: all 0.3s ease-in-out;
+    &:hover {
+    	color: vars.$blue;
+    }
+  }
+}
+
+.footer-top {
+  max-width: 1050px;
+  width: 100%;
+  margin-bottom: 30px;
+  @media (min-width: vars.$tablet) {
+    display: flex;
+    gap: 40px;
+  }
+  @media (min-width: vars.$laptop) {
+    margin-bottom: 60px;
+  }
+  .col-left {
+    margin-bottom: 30px;
+    @media (min-width: vars.$tablet) {
+      width: calc(60% - 20px);
+      margin-bottom: 0;
+    }
+    @media (min-width: vars.$laptop) {
+      width: calc(70% - 20px);
+    }
+  }
+  .col-right {
+    display: flex;
+    gap: 80px;
+    @media (min-width: vars.$tablet) {
+      width: calc(40% - 20px);
+    }
+    @media (min-width: vars.$laptop) {
+      width: calc(30% - 20px);
+    }
+  }
+  .footer-info {
+    @media (min-width: vars.$tablet) {
+      display: flex;
+      gap: 20px;
+    }
+    @media (min-width: vars.$pc) {
+      gap: 80px;
+    }
+  }
+  address {
+    font-style: normal;
+    margin-bottom: 30px;
+    @media (min-width: vars.$tablet) {
+      margin: 0;
+    }
+    strong {
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+  }
+  .title {
+    color: inherit;
+  }
+}
+
+.footer-contacts {
+  a {
+    display: block;
+    text-decoration: none;
+  }
+}
+
+.footer-logo {
+  max-width: 160px;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 30px;
+  @media (min-width: vars.$pc) {
+    max-width: 230px;
+    margin-bottom: 72px;
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.footer-menu,
+.footer-socials {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  li {
+    margin-bottom: 16px;
+    @media (min-width: vars.$pc) {
+      margin-bottom: 32px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid vars.$white;
+  padding-top: 38px;
+  @media (min-width: vars.$tablet) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+}
+
+.additional-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  @media (min-width: vars.$tablet) {
+    margin: 0;
+  }
+  @media (min-width: vars.$pc) {
+    gap: 32px;
+  }
+  a {
+    text-decoration: none;
+  }
+}

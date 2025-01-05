@@ -1,0 +1,25 @@
+@use "./layout/variables" as vars;
+
+.who-we-are-section {
+  margin-bottom: 40px;
+  @media (min-width: vars.$tablet) {
+    display: flex;
+    gap: 24px;
+  }
+  .section-title {
+    margin-bottom: 24px;
+    @media (min-width: vars.$tablet) {
+      width: calc(40% - 12px);
+    }
+  }
+  .text {
+    @media (min-width: vars.$tablet) {
+      width: calc(60% - 12px);
+    }
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

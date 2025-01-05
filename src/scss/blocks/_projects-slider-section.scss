@@ -1,0 +1,174 @@
+@use "./layout/variables" as vars;
+
+.projects-slider-section {
+  .suptitle {
+    display: block;
+    width: 100%;
+  }
+  .section-title {
+    margin: 0;
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
+  }
+}
+
+.top-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  margin-bottom: 22px;
+  @media (min-width: vars.$pc) {
+    margin-bottom: 46px;
+  }
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+  @media (min-width: vars.$tablet) {
+    flex-direction: row;
+    gap: 80px;
+  }
+  @media (min-width: vars.$pc) {
+    gap: 160px;
+    margin-bottom: 46px;
+  }
+  .text {
+    @media (min-width: vars.$tablet) {
+      flex: 1 1 60%;
+    }
+  }
+  ul {
+    @media (min-width: vars.$tablet) {
+      flex: 1 1 40%;
+    }
+  }
+  p, ul {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    li {
+      position: relative;
+      padding-left: 20px;
+      &:before {
+        content: '';
+        background: vars.$gray;
+        position: absolute;
+        top: 0.85em;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        display: block;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.projects-slider {
+  margin-left: 0;
+  padding-bottom: 80px;
+  @media (min-width: vars.$laptop) {
+    overflow: visible;
+    width: 80%;
+  }
+  .project-item {
+    .image {
+      img {
+        aspect-ratio: 548/600;
+      }
+    }
+  }
+}
+
+.project-item {
+  text-decoration: none;
+  display: block;
+  &:hover,
+  &.swiper-slide-active {
+    .rounded-link {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .image {
+    box-shadow: 0 0 25px rgba(vars.$dark, 0.1);
+    position: relative;
+    display: block;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .rounded-link {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  border-top: 1px dotted vars.$gray;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border-radius: 0;
+  .swiper-scrollbar-drag {
+    cursor: pointer;
+    background: vars.$light;
+    border: 1px solid #9E9E9E;
+    height: 40px;
+    border-radius: 200px;
+    top: -50%;
+    min-width: 80px;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background: vars.$blue;
+      border-color: vars.$blue;
+      &:before, &:after {
+        border-color: vars.$white;
+      }
+    }
+    &:before, &:after {
+      content: '';
+      border-top: 1px solid #9E9E9E;
+      border-left: 1px solid #9E9E9E;
+      position: absolute;
+      top: 50%;
+      width: 14px;
+      height: 14px;
+      display: block;
+      border-top-left-radius: 3px;
+      transition: all 0.3s ease-in-out;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      left: 40%;
+    }
+    &:after {
+      left: 60%;
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+  }
+}

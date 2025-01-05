@@ -1,0 +1,159 @@
+@use "./layout/variables" as vars;
+
+.services-hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media (min-width: vars.$tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 80px;
+  }
+  .col-left,
+  .col-right {
+    @media (min-width: vars.$tablet) {
+      flex: 1 1 calc(50% - 40px);
+    }
+  }
+  .suptitle {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .section-title {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hero-services {
+  display: grid;
+  row-gap: 24px;
+  column-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  @media (min-width: vars.$tablet) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: vars.$laptop) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .service-item {
+    box-shadow: 0 0 10px rgba(vars.$dark, 0.3);
+    background-color: #D9D9D9;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 24px;
+    grid-area: span 1;
+    @media (min-width: vars.$pc) {
+      padding: 42px;
+    }
+    &.vawes-bg {
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      grid-area: span 1 / span 2;
+      @media (min-width: vars.$tablet) {
+        grid-area: 1 / 1 / span 2 / span 2;
+      }
+      &:before,
+      &:after {
+        width: 100%;
+      }
+    }
+    &.service-nav {
+      background: vars.$orange;
+      color: vars.$white;
+      grid-area: span 1 / span 2;
+      @media (min-width: vars.$tablet) {
+        grid-area: 1 / 3 / span 2 / span 2;
+      }
+      @media (min-width: vars.$laptop) {
+        grid-area: 1 / 5 / span 2 / span 1;
+      }
+    }
+    .title {
+      color: inherit;
+      font-weight: 900;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      strong {
+        color: inherit;
+        display: block;
+        margin-bottom: 0;
+        @media (max-width: 767px) {
+          font-size: 60px;
+        }
+      }
+    }
+    .image {
+      margin: -24px;
+      @media (min-width: vars.$pc) {
+        margin: -42px;
+      }
+      img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+    }
+    .nav-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      @media (min-width: vars.$tablet) {
+        columns: unset;
+      }
+      @media (min-width: vars.$laptop) {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 16px;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.logos-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  li {
+    border: 5px solid vars.$blue;
+    border-radius: 50%;
+    overflow: hidden;
+    max-width: 42px;
+    width: 100%;
+    margin-left: -16px;
+    position: relative;
+    @media (min-width: vars.$pc) {
+      max-width: 64px;
+      margin-left: -24px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+}

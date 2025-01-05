@@ -1,0 +1,102 @@
+@use "./layout/variables" as vars;
+
+.btn {
+  cursor: pointer;
+  color: vars.$gray;
+  border: 1px solid vars.$gray;
+  background: transparent;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 50px;
+  text-decoration: none;
+  padding: 5px 24px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  @media (min-width: vars.$pc) {
+    border-radius: 100px;
+  }
+  &:hover {
+    color: vars.$white;
+    border-color: vars.$dark;
+    background-color: vars.$dark;
+  }
+  &.btn-arrow {
+    &:after {
+      content: "\e901";
+      /* use !important to prevent issues with browser extensions that change fonts */
+      font-family: 'icomoon' !important;
+      speak: never;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      font-size: 20px;
+      vertical-align: text-bottom;
+      margin-left: 10px;
+      @media (min-width: vars.$pc) {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.rounded-link {
+  background: vars.$blue;
+  color: vars.$white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  @media (min-width: vars.$pc) {
+    padding: 55px;
+  }
+}
+
+.arrow-link {
+  color: vars.$blue;
+  text-decoration: none;
+  white-space: nowrap;
+  &:after {
+    content: "\e900";
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-size: 24px;
+    margin-left: 8px;
+    display: inline-block;
+    transform: rotate(90deg);
+    vertical-align: bottom;
+    transition: all 0.3s ease-in-out;
+    @media (min-width: vars.$pc) {
+      font-size: 36px;
+    }
+  }
+  &:hover {
+  	&:after {
+      transform: rotate(90deg) translateY(-10px);
+    }
+  }
+}

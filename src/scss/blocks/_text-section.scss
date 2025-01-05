@@ -1,0 +1,21 @@
+@use "./layout/variables" as vars;
+
+.text-section{
+  &:before {
+    background-color: vars.$orange;
+  }
+  .section-title,
+  .subtitle {
+    color: inherit;
+    &:last-child {
+        margin-bottom: 0;
+    }
+  }
+  .section-title {
+    margin-bottom: 24px;
+  }
+  .subtitle {
+    text-transform: none;
+    font-weight: 500;
+  }
+}

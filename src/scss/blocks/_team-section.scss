@@ -1,0 +1,88 @@
+@use "./layout/variables" as vars;
+
+.team-section {
+  .section-title {
+    margin-bottom: 24px;
+    @media (min-width: vars.$pc) {
+      margin-bottom: 78px;
+    }
+  }
+}
+
+.team-banner {
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  @media (min-width: vars.$laptop) {
+    margin-bottom: 46px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  img {
+    width: 100%;
+    aspect-ratio: 1288/377;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 24px;
+  @media (min-width: vars.$laptop) {
+    column-gap: 32px;
+    row-gap: 46px;
+  }
+}
+
+.team-member {
+  width: calc(50% - 8px);
+  @media (min-width: vars.$tablet) {
+    width: calc(33.33% - 11px);
+  }
+  @media (min-width: vars.$laptop) {
+    width: calc(25% - 24px);
+  }
+  .image {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    @media (min-width: vars.$pc) {
+      margin-bottom: 24px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
+  }
+  .name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    @media (min-width: vars.$pc) {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+  }
+  .position {
+    font-size: 14px;
+    @media (min-width: vars.$pc) {
+      font-size: 16px;
+    }
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: vars.$blue;
+      + .name a {
+        color: vars.$blue;
+      }
+    }
+  }
+}

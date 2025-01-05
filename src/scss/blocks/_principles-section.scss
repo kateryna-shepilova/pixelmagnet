@@ -1,0 +1,40 @@
+@use "./layout/variables" as vars;
+
+.principles-section {
+  .section-title {
+    margin-bottom: 24px;
+  }
+  p {
+    &:last-child {
+        margin-bottom: 0;
+    }
+  }
+}
+
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media (min-width: vars.$tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .item {
+    @media (min-width: vars.$tablet) {
+      width: calc(50% - 12px);
+    }
+    @media (min-width: vars.$laptop) {
+      width: calc(33.33% - 16px);
+    }
+  }
+  .title {
+    color: vars.$orange;
+    font-size: 18px;
+    text-transform: none;
+    font-weight: 600;
+    margin-bottom: 12px;
+    @media (min-width: vars.$pc) {
+      font-size: 20px;
+    }
+  }
+}

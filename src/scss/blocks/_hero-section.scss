@@ -1,0 +1,90 @@
+@use "./layout/variables" as vars;
+
+.hero-section {
+  margin-bottom: 36px;
+  .section-title {
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .text {
+    margin-bottom: 20px;
+    @media (min-width: vars.$pc) {
+      margin-bottom: 56px;
+    }
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hero-banner {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  @media (min-width: vars.$tablet) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 16px;
+    gap: 24px;
+  }
+  .bg {
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    @media (min-width: vars.$tablet) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      margin-bottom: 0;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 113vw;
+      @media (min-width: vars.$tablet) {
+        min-height: unset;
+      }
+    }
+  }
+  .title {
+    background: vars.$orange;
+    color: vars.$white;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 0.4em 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 24px;
+    @media (min-width: vars.$tablet) {
+      width: fit-content;
+      margin: 0 0 16px 16px;
+    }
+    @media (min-width: vars.$pc) {
+      font-size: 24px;
+      border-radius: 100px;
+    }
+    strong {
+      font-size: 32px;
+      margin-right: 10px;
+      @media (min-width: vars.$pc) {
+        font-size: 96px;
+      }
+    }
+  }
+  .text-holder {
+    background: vars.$white;
+    border-radius: 12px;
+    padding: 24px 16px;
+    max-width: 356px;
+    width: 100%;
+  }
+}
