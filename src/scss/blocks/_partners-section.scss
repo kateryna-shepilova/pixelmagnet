@@ -1,10 +1,10 @@
-@use "./layout/variables" as vars;
+@use "./layout/variables" as *;
 
 .partners-section {
   .section-title {
     text-align: center;
     margin-bottom: 20px;
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       margin-bottom: 42px;
     }
   }
@@ -25,10 +25,10 @@
     font-size: 24px;
     text-transform: uppercase;
     width: fit-content;
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
       font-size: 30px;
     }
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       font-size: 48px;
     }
   }

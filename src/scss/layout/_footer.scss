@@ -1,19 +1,19 @@
-@use "./layout/variables" as vars;
+@use "./layout/variables" as *;
 
 .footer-holder {
-  background: vars.$dark;
-  color: vars.$white;
+  background: $dark;
+  color: $white;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
   padding: 40px 0;
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     padding: 72px 0 55px;
   }
   a {
     transition: all 0.3s ease-in-out;
     &:hover {
-    	color: vars.$blue;
+    	color: $blue;
     }
   }
 }
@@ -22,46 +22,46 @@
   max-width: 1050px;
   width: 100%;
   margin-bottom: 30px;
-  @media (min-width: vars.$tablet) {
+  @media (min-width: $tablet) {
     display: flex;
     gap: 40px;
   }
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     margin-bottom: 60px;
   }
   .col-left {
     margin-bottom: 30px;
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
       width: calc(60% - 20px);
       margin-bottom: 0;
     }
-    @media (min-width: vars.$laptop) {
+    @media (min-width: $laptop) {
       width: calc(70% - 20px);
     }
   }
   .col-right {
     display: flex;
     gap: 80px;
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
       width: calc(40% - 20px);
     }
-    @media (min-width: vars.$laptop) {
+    @media (min-width: $laptop) {
       width: calc(30% - 20px);
     }
   }
   .footer-info {
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
       display: flex;
       gap: 20px;
     }
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       gap: 80px;
     }
   }
   address {
     font-style: normal;
     margin-bottom: 30px;
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
       margin: 0;
     }
     strong {
@@ -86,7 +86,7 @@
   width: 100%;
   display: inline-block;
   margin-bottom: 30px;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     max-width: 230px;
     margin-bottom: 72px;
   }
@@ -103,7 +103,7 @@
   margin: 0;
   li {
     margin-bottom: 16px;
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       margin-bottom: 32px;
     }
     &:last-child {
@@ -116,9 +116,9 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid vars.$white;
+  border-top: 1px solid $white;
   padding-top: 38px;
-  @media (min-width: vars.$tablet) {
+  @media (min-width: $tablet) {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
@@ -133,10 +133,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  @media (min-width: vars.$tablet) {
+  @media (min-width: $tablet) {
     margin: 0;
   }
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     gap: 32px;
   }
   a {

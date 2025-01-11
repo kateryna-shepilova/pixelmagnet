@@ -1,20 +1,20 @@
-@use "./layout/variables" as vars;
+@use "./layout/variables" as *;
 
 .projects-hero-section {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  @media (min-width: vars.$tablet) {
+  @media (min-width: $tablet) {
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 80px;
   }
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     row-gap: 48px;
   }
   .col-left,
   .col-right {
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
       flex: 1 1 calc(50% - 40px);
     }
   }
@@ -32,37 +32,37 @@
   column-gap: 16px;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  @media (min-width: vars.$tablet) {
+  @media (min-width: $tablet) {
     grid-template-columns: repeat(5, 1fr);
   }
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     grid-template-columns: repeat(5, 1fr);
     row-gap: 24px;
   }
   .project {
-    box-shadow: 0 0 10px rgba(vars.$dark, 0.3);
+    box-shadow: 0 0 10px rgba($dark, 0.3);
     background-color: #D9D9D9;
     border-radius: 16px;
     overflow: hidden;
     grid-area: span 1;
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
 
     }
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       border-radius: 24px;
     }
     &:first-child {
-      @media (min-width: vars.$tablet) {
+      @media (min-width: $tablet) {
         grid-area: 1 / 1 / span 2 / span 2;
       }
     }
     &:nth-child(2) {
-      @media (min-width: vars.$tablet) {
+      @media (min-width: $tablet) {
         grid-area: 1 / 3 / span 2 / span 1;
       }
       .image {
         img {
-          @media (min-width: vars.$tablet) {
+          @media (min-width: $tablet) {
             aspect-ratio: 1/2;
           }
         }

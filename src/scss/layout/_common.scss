@@ -1,4 +1,4 @@
-@use "./layout/variables" as vars;
+@use "./layout/variables" as *;
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -11,14 +11,14 @@ body {
 }
 
 body {
-  font-family: vars.$base-font;
-  font-size: vars.$font-size;
-  color: vars.$gray;
-  background-color: vars.$light;
+  font-family: $base-font;
+  font-size: $font-size;
+  color: $gray;
+  background-color: $light;
   line-height: 1.7;
   font-weight: 400;
   overflow-x: hidden;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     font-size: 20px;
   }
   &.menu-active {
@@ -45,14 +45,14 @@ body {
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     padding: 0 76px;
   }
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: vars.$black;
+  color: $black;
   line-height: 1.2;
   font-weight: 900;
   letter-spacing: -0.03em;
@@ -68,10 +68,10 @@ h1,
 .h1 {
   font-size: 48px;
   margin-bottom: 16px;
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     font-size: 68px;
   }
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     font-size: 96px;
     margin-bottom: 35px;
   }
@@ -80,10 +80,10 @@ h1,
 h2,
 .h2 {
   font-size: 48px;
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     font-size: 56px;
   }
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     font-size: 64px;
   }
 }
@@ -92,10 +92,10 @@ h3,
 .h3 {
   font-size: 24px;
   margin-bottom: 16px;
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     font-size: 36px;
   }
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     font-size: 48px;
   }
 }
@@ -103,7 +103,7 @@ h3,
 h4,
 .h4 {
   font-size: 22px;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     font-size: 32px;
   }
 }
@@ -112,7 +112,7 @@ h5,
 .h5 {
   font-size: 20px;
   font-weight: 400;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     font-size: 24px;
   }
 }
@@ -140,13 +140,13 @@ main > .container {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     gap: 80px;
   }
   > div, section {
     &:last-child {
       margin-bottom: 40px;
-      @media (min-width: vars.$pc) {
+      @media (min-width: $pc) {
         margin-bottom: 80px;
       }
     }
@@ -154,13 +154,13 @@ main > .container {
 }
 
 .orange-bg {
-  color: vars.$white;
+  color: $white;
   display: inline-block;
   position: relative;
   z-index: 1;
   &:before {
     content: '';
-    background: vars.$orange;
+    background: $orange;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -170,7 +170,7 @@ main > .container {
     display: block;
     border-radius: 40px;
     z-index: -1;
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       width: calc(100% + 32px);
       height: calc(100% + 32px);
       border-radius: 80px;
@@ -179,7 +179,7 @@ main > .container {
 }
 
 blockquote {
-  color: vars.$black;
+  color: $black;
   margin: 0 0 8px;
   &:before {
     content: "\e903";
@@ -196,44 +196,44 @@ blockquote {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    color: vars.$orange;
+    color: $orange;
     font-size: 28px;
     display: block;
     margin-bottom: 8px;
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       font-size: 56px;
     }
   }
 }
 
 cite {
-  color: vars.$blue;
+  color: $blue;
   font-weight: 700;
   font-style: normal;
 }
 
 .orange-text {
-  color: vars.$orange;
+  color: $orange;
 }
 
 .suptitle {
-  color: vars.$orange;
+  color: $orange;
   font-weight: 500;
   font-size: 24px;
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 24px;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     font-size: 32px;
     margin-bottom: 16px;
   }
 }
 
 .vawes-bg {
-  color: vars.$white;
+  color: $white;
   position: relative;
   padding: 42px 0;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     padding: 146px 0;
   }
   &:before,
@@ -249,7 +249,7 @@ cite {
     z-index: -1;
   }
   &:before {
-    background-color: vars.$blue;
+    background-color: $blue;
   }
   &:after {
     background-image: url('../images/vawe.svg');
@@ -261,5 +261,5 @@ cite {
 }
 
 .gray-text {
-  color: vars.$gray;
+  color: $gray;
 }

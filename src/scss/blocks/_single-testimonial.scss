@@ -1,0 +1,13 @@
+@use "./layout/variables" as *;
+
+.single-testimonial {
+  blockquote {
+    font-size: 24px;
+    @media (min-width: $laptop) {
+      font-size: 32px;
+    }
+    @media (min-width: $pc-xl) {
+      font-size: 48px;
+    }
+  }
+}

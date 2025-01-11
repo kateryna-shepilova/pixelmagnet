@@ -1,24 +1,24 @@
-@use "./layout/variables" as vars;
+@use "./layout/variables" as *;
 
 .text-video-section {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  @media (min-width: vars.$tablet) {
+  @media (min-width: $tablet) {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 50px;
   }
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     row-gap: 88px;
   }
   .col-left {
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
       width: calc(60% - 12px);
     }
   }
   .col-right {
-    @media (min-width: vars.$tablet) {
+    @media (min-width: $tablet) {
       width: calc(40% - 12px);
     }
   }
@@ -28,14 +28,14 @@
     }
   }
   .video {
-    color: vars.$white;
+    color: $white;
     text-decoration: none;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
     display: inline-block;
     margin-bottom: 24px;
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       border-radius: 24px;
       margin-bottom: 16px;
     }
@@ -75,13 +75,13 @@
   font-size: 24px;
   font-weight: 900;
   line-height: 1.2;
-  @media (min-width: vars.$tablet) {
+  @media (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
     text-align: left;
   }
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     width: 72%;
     margin-left: auto;
   }
@@ -89,7 +89,7 @@
 
 .info-box {
   margin-bottom: 24px;
-  @media (min-width: vars.$tablet) {
+  @media (min-width: $tablet) {
     display: flex;
     align-items: center;
     gap: 24px;
@@ -99,10 +99,10 @@
     margin-bottom: 0;
   }
   .title {
-    color: vars.$orange;
+    color: $orange;
     font-size: 60px;
     margin-bottom: 12px;
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       font-size: 96px;
     }
   }

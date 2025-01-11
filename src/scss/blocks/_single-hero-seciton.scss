@@ -1,0 +1,40 @@
+@use "./layout/variables" as *;
+
+.single-hero-seciton {
+  position: relative;
+  z-index: 1;
+  @media (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    column-gap: 80px;
+  }
+  .section-title {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .col-left,
+  .col-right {
+    margin-bottom: 24px;
+  }
+  .suptitle,
+  .hero-banner {
+    width: 100%;
+    padding: 0;
+  }
+  .bg {
+    @media (min-width: $tablet) {
+      position: static;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    img {
+      display: block;
+      width: 100%;
+      min-height: 48.8vw;
+    }
+  }
+}

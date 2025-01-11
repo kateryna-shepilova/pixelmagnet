@@ -1,34 +1,34 @@
-@use "./layout/variables" as vars;
+@use "./layout/variables" as *;
 
 .cta-section {
   padding: 72px 0;
   text-align: center;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     padding: 146px 0;
   }
   .section-title {
     color: inherit;
     font-size: 32px;
     margin-bottom: 35px;
-    @media (min-width: vars.$laptop) {
+    @media (min-width: $laptop) {
       font-size: 58px;
     }
-    @media (min-width: vars.$pc) {
+    @media (min-width: $pc) {
       font-size: 96px;
     }
   }
   .rounded-link {
-    background: vars.$white;
-    color: vars.$blue;
-    border: 12px solid vars.$blue;
-    @media (min-width: vars.$laptop) {
+    background: $white;
+    color: $blue;
+    border: 12px solid $blue;
+    @media (min-width: $laptop) {
       position: absolute;
       top: 35%;
       right: 30%;
     }
     &:hover {
-      background: vars.$orange;
-      color: vars.$white;
+      background: $orange;
+      color: $white;
     }
   }
 }

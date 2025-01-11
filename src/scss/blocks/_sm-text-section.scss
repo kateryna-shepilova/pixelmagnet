@@ -1,0 +1,14 @@
+@use "./layout/variables" as *;
+
+.sm-text-section {
+  max-width: 763px;
+  width: 100%;
+  .section-title {
+    margin-bottom: 24px;
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

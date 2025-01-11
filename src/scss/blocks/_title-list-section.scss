@@ -1,0 +1,48 @@
+@use "./layout/variables" as *;
+
+.title-list-section {
+  margin-bottom: 36px;
+  @media (min-width: $laptop) {
+    display: flex;
+    gap: 40px;
+  }
+  .section-title {
+    margin-bottom: 24px;
+    @media (min-width: $laptop) {
+      flex: 1 1 calc(35% - 20px);
+    }
+  }
+}
+
+.three-col-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media (min-width: $laptop) {
+    flex: 1 1 calc(65% - 20px);
+  }
+  .item {
+    @media (min-width: $tablet) {
+      width: calc(33.33% - 16px);
+    }
+    .title {
+      color: $orange;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: none;
+      margin-bottom: 12px;
+      @media (min-width: $laptop) {
+        font-size: 20px;
+      }
+    }
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use "./layout/variables" as *;
+
+.project-info-section {
+  color: $white;
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 53px;
+  @media (min-width: $pc) {
+    padding-top: 166px;
+    padding-bottom: 72px;
+  }
+  &:before {
+    content: '';
+    background: $blue;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    display: block;
+    z-index: -1;
+  }
+  .title {
+    color: inherit;
+  }
+}
+
+.single-hero-seciton {
+  + .project-info-section {
+    margin-top: -86px;
+    @media (min-width: $pc) {
+      margin-top: -126px;
+    }
+  }
+}
+
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .item {
+    @media (min-width: $tablet) {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .title {
+      margin-bottom: 24px;
+      @media (min-width: $tablet) {
+        width: calc(40% - 12px);
+      }
+    }
+    .text {
+      @media (min-width: $tablet) {
+        width: calc(60% - 12px);
+      }
+    }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    ul {
+      padding-left: 1.2em;
+    }
+  }
+}

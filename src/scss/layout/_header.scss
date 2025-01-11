@@ -1,10 +1,10 @@
-@use "./layout/variables" as vars;
+@use "./layout/variables" as *;
 
 .header {
   padding: 24px 0;
   position: relative;
   z-index: 9;
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     padding: 47px 0;
   }
   .container {
@@ -19,7 +19,7 @@
   width: 100%;
   display: inline-block;
   margin: 0;
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     max-width: 213px;
   }
   img {
@@ -29,7 +29,7 @@
 }
 
 .header-menu-holder {
-  background: vars.$light;
+  background: $light;
   padding: 80px 30px;
   position: absolute;
   top: 0;
@@ -40,7 +40,7 @@
   overflow-y: auto;
   text-align: center;
   transition: all 0.3s ease-in-out;
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -54,7 +54,7 @@
     text-align: left;
     padding: 0;
   }
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     gap: 72px;
   }
   .menu-active & {
@@ -67,7 +67,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0 0 30px;
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     font-size: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -75,13 +75,13 @@
     gap: 50px;
     margin-bottom: 0;
   }
-  @media (min-width: vars.$pc) {
+  @media (min-width: $pc) {
     gap: 72px;
   }
   li {
     position: relative;
     margin-bottom: 16px;
-    @media (min-width: vars.$laptop) {
+    @media (min-width: $laptop) {
       margin-bottom: 0;
     }
     &:last-child {
@@ -99,7 +99,7 @@
     display: inline-block;
     transition: all 0.3s ease-in-out;
     &:hover {
-      color: vars.$black;
+      color: $black;
     }
   }
   .submenu {
@@ -109,9 +109,9 @@
     display: block;
     font-size: 20px;
     transition: all 0.3s ease-in-out;
-    @media (min-width: vars.$laptop) {
-      background: vars.$light;
-      box-shadow: 0 5px 10px rgba(vars.$dark, 0.2);
+    @media (min-width: $laptop) {
+      background: $light;
+      box-shadow: 0 5px 10px rgba($dark, 0.2);
       position: absolute;
       top: 100%;
       left: -20px;
@@ -141,7 +141,7 @@
   font-size: 0;
   position: relative;
   z-index: 2;
-  @media (min-width: vars.$laptop) {
+  @media (min-width: $laptop) {
     display: none;
   }
   &:before,
@@ -151,7 +151,7 @@
   &:before,
   &:after,
   span {
-    background: vars.$dark;
+    background: $dark;
     position: absolute;
     left: 0;
     width: 100%;

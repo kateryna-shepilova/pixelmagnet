@@ -51,6 +51,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 spaceBetween: 32
             },
         },
+        on: {
+            init: function () {
+                this.snapGrid = [...this.slidesGrid];
+            },
+            slideChange: function () {
+                this.snapGrid = [...this.slidesGrid];
+            },
+            reachEnd: function () {
+                this.snapGrid = [...this.slidesGrid];
+            },
+        },
+
     });
 
     const testimonialsSwiper = new Swiper('.testimonials-slider', {
