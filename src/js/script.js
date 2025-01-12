@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.snapGrid = [...this.slidesGrid];
             },
         },
-
     });
 
     const testimonialsSwiper = new Swiper('.testimonials-slider', {
@@ -86,11 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
             slideChange: function (swiper) {
                 adjustSliderHeight(swiper);
             },
-            setTranslate: function (swiper, translate) {
-                if (window.innerWidth >= 1024) {
-                    console.log(translate);
-                }
-            }
         },
         breakpoints: {
             1024: {
@@ -106,24 +100,53 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // masonry
-    function initializeMasonry() {
-        const isMobile = window.innerWidth <= 768;
-        const gutterSize = isMobile ? 16 : 32;
+    const projectsHolder = document.querySelector(".projects-holder");
 
-        return new Masonry(".projects-holder", {
-            itemSelector: '.project-item:not(.excluded)',
-            columnWidth: '.project-item',
-            gutter: gutterSize,
+    if (projectsHolder && typeof Masonry !== "undefined") {
+        function initializeMasonry() {
+            const isMobile = window.innerWidth <= 768;
+            const gutterSize = isMobile ? 16 : 32;
+
+            return new Masonry(".projects-holder", {
+                itemSelector: '.project-item:not(.excluded)',
+                columnWidth: '.project-item',
+                gutter: gutterSize,
+            });
+        }
+
+        let msnry = initializeMasonry();
+
+        window.addEventListener('resize', () => {
+            msnry.destroy();
+            msnry = initializeMasonry();
+        });
+
+        // projects filter
+        const radioButtons = document.querySelectorAll(".projects-filter input[type='radio']");
+        const allProjects = Array.from(projectsHolder.querySelectorAll(".project-item"));
+
+        function filterProjects(type) {
+            allProjects.forEach(project => {
+                if (type === "all" || project.dataset.type === type) {
+                    project.style.display = "";
+                    project.classList.remove("excluded");
+                } else {
+                    project.style.display = "none";
+                    project.classList.add("excluded");
+                }
+            });
+            msnry.reloadItems();
+            msnry.layout();
+            loadMoreProjects();
+        }
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener("change", (event) => {
+                const selectedType = event.target.value;
+                filterProjects(selectedType);
+            });
         });
     }
-
-    let msnry = initializeMasonry();
-
-    window.addEventListener('resize', () => {
-        msnry.destroy();
-
-        msnry = initializeMasonry();
-    });
 
     // load more projects
     function loadMoreProjects() {
@@ -154,33 +177,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     loadMoreProjects();
-
-    // projects filter
-    const projectsHolder = document.querySelector(".projects-holder");
-    const radioButtons = document.querySelectorAll(".projects-filter input[type='radio']");
-    const allProjects = Array.from(projectsHolder.querySelectorAll(".project-item"));
-
-    function filterProjects(type) {
-        allProjects.forEach(project => {
-            if (type === "all" || project.dataset.type === type) {
-                project.style.display = "";
-                project.classList.remove("excluded");
-            } else {
-                project.style.display = "none";
-                project.classList.add("excluded");
-            }
-        });
-        msnry.reloadItems();
-        msnry.layout();
-        loadMoreProjects();
-    }
-
-    radioButtons.forEach(radio => {
-        radio.addEventListener("change", (event) => {
-            const selectedType = event.target.value;
-            filterProjects(selectedType);
-        });
-    });
 });
 
 // Adjust slider height
