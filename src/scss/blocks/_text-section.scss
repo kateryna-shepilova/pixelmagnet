@@ -1,6 +1,6 @@
 @use "./layout/variables" as *;
 
-.text-section{
+.text-section {
   &:before {
     background-color: $orange;
   }
@@ -8,7 +8,7 @@
   .subtitle {
     color: inherit;
     &:last-child {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
   }
   .section-title {

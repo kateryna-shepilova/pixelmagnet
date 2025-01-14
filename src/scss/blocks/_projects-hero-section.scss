@@ -45,9 +45,6 @@
     border-radius: 16px;
     overflow: hidden;
     grid-area: span 1;
-    @media (min-width: $tablet) {
-
-    }
     @media (min-width: $pc) {
       border-radius: 24px;
     }

@@ -64,9 +64,17 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
+    function calculateSlideHeights() {
+        const slides = document.querySelectorAll('.testimonials-slider .swiper-slide');
+        const slideHeights = Array.from(slides).map(slide => slide.getBoundingClientRect().height);
+        return slideHeights;
+    }
+
+    const slideHeights = calculateSlideHeights();
+
     const testimonialsSwiper = new Swiper('.testimonials-slider', {
         loop: true,
-        autoHeight: true,
+        autoHeight: false,
         spaceBetween: 16,
         slidesPerView: 1,
         autoplay: false,
@@ -80,10 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         on: {
             init: function (swiper) {
-                adjustSliderHeight(swiper);
+                setInitialSliderHeight(swiper);
             },
             slideChange: function (swiper) {
-                adjustSliderHeight(swiper);
+                updateSliderHeight(swiper);
             },
         },
         breakpoints: {
@@ -92,6 +100,36 @@ document.addEventListener('DOMContentLoaded', function () {
                 spaceBetween: 24,
             },
         },
+    });
+
+    function setInitialSliderHeight(swiper) {
+        const slider = document.querySelector(".testimonials-slider");
+        if (window.innerWidth >= 1024) {
+            const initialHeight = slideHeights[swiper.realIndex];
+            slider.style.height = `${initialHeight}px`;
+        } else {
+            slider.style.height = "auto";
+        }
+    }
+
+    function updateSliderHeight(swiper) {
+        const slider = document.querySelector(".testimonials-slider");
+        if (window.innerWidth >= 1024) {
+            const activeSlideHeight = slideHeights[swiper.realIndex];
+            slider.style.height = `${activeSlideHeight}px`;
+        } else {
+            slider.style.height = "auto";
+        }
+    }
+
+    window.addEventListener("resize", () => {
+        const slider = document.querySelector(".testimonials-slider");
+        if (window.innerWidth >= 1024) {
+            const activeSlideHeight = slideHeights[testimonialsSwiper.realIndex];
+            slider.style.height = `${activeSlideHeight}px`;
+        } else {
+            slider.style.height = "auto";
+        }
     });
 
     // fancybox
@@ -177,28 +215,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     loadMoreProjects();
-});
-
-// Adjust slider height
-function adjustSliderHeight(swiper) {
-    if (window.innerWidth >= 1024) {
-        const slider = document.querySelector(".testimonials-slider");
-        const currentSlideItem = swiper.slides[swiper.activeIndex];
-        slider.style.height = currentSlideItem.clientHeight + "px";
-    } else {
-        const slider = document.querySelector(".testimonials-slider");
-        slider.style.height = "auto";
-    }
-}
-
-// Resize event
-window.addEventListener("resize", () => {
-    const slider = document.querySelector(".testimonials-slider");
-    const swiperInstance = testimonialsSwiper;
-
-    adjustSliderHeight(swiperInstance);
-
-    if (window.innerWidth < 1024) {
-        slider.style.height = "auto";
-    }
 });

@@ -51,32 +51,32 @@
   @media (min-width: $laptop) {
     gap: 24px;
   }
-   .info-block {
-     color: $blue;
-     border: 1px solid $blue;
-     background: rgba($blue, 0.1);
-     display: flex;
-     justify-content: flex-start;
-     align-items: flex-end;
-     text-decoration: none;
-     text-transform: uppercase;
-     border-radius: 24px;
-     padding: 24px;
-     font-weight: 500;
-     width: 100%;
-     margin: 0;
-     transition: all 0.3s ease-in-out;
-     @media (min-width: $tablet) {
-       width: calc(50% - 12px);
-       min-height: 195px;
-     }
-     @media (min-width: $laptop) {
-       width: calc(33.33% - 16px);
-     }
-     &:hover {
-     	border-color: $orange;
-       background: $orange;
-       color: $white;
-     }
-   }
+  .info-block {
+    color: $blue;
+    border: 1px solid $blue;
+    background: rgba($blue, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 24px;
+    padding: 24px;
+    font-weight: 500;
+    width: 100%;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+    @media (min-width: $tablet) {
+      width: calc(50% - 12px);
+      min-height: 195px;
+    }
+    @media (min-width: $laptop) {
+      width: calc(33.33% - 16px);
+    }
+    &:hover {
+      border-color: $orange;
+      background: $orange;
+      color: $white;
+    }
+  }
 }
